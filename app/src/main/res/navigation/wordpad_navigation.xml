@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mitochondria_navigation"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.khayrultw.wordpad.ui.presentations.main.MainFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_fragment_main_to_fragment_b"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:destination="@id/wordDetails" />
+        <action
+            android:id="@+id/action_main_to_editWordDetails"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:destination="@id/editWordDetails" />
+        <action
+            android:id="@+id/action_main_to_addWordDetails"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:destination="@id/addWordDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordDetails"
+        android:name="com.khayrultw.wordpad.ui.presentations.wordDetails.AddWordDetailsFragment"
+        android:label="Word Details"
+        tools:layout="@layout/fragment_add_edit_word_details" >
+        <action
+            android:id="@+id/action_wordDetails_to_editWordDetails"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:destination="@id/editWordDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editWordDetails"
+        android:name="com.khayrultw.wordpad.ui.presentations.wordDetails.EditWordDetailsFragment"
+        android:label="EditWordDetailsFragment" />
+
+    <fragment
+        android:id="@+id/addWordDetails"
+        android:name="com.khayrultw.wordpad.ui.presentations.wordDetails.AddWordDetailsFragment"
+        android:label="EditWordDetailsFragment" />
+</navigation>

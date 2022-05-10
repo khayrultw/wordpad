@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.WordPad.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+
+    <!--Toolbar-->
+    <style name="WordPad.Toolbar.Base" parent="Theme.WordPad">
+        <item name="android:background">?attr/colorOnPrimary</item>
+        <item name="navigationIconTint">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="WordPad.Toolbar.Default" parent="WordPad.Toolbar.Base"/>
+    <style name="WordPad.Toolbar.Grey" parent="WordPad.Toolbar.Base">
+    </style>
+
+    <style name="wordpad.text.regular.form" parent="">
+        <item name="android:textStyle">normal</item>
+        <item name="android:padding">@dimen/xxs</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.gray.extraSmall" parent="">
+        <item name="android:textColor">@color/divider</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.gray.small" parent="">
+        <item name="android:textColor">@color/divider</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.gray.medium" parent="">
+        <item name="android:textColor">@color/divider</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.gray.large" parent="">
+        <item name="android:textColor">@color/divider</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.gray.extraLarge" parent="">
+        <item name="android:textColor">@color/divider</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.extraSmall" parent="">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.small" parent="">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.medium" parent="">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.large" parent="">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.extraLarge" parent="">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.primary.extraTiny" parent="">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.primary.tiny" parent="">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.primary.extraSmall" parent="">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.primary.small" parent="">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.primary.medium" parent="">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.primary.large" parent="">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.primary.extraLarge" parent="">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.warning.extraSmall" parent="">
+        <item name="android:textColor">@color/warning</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.warning.small" parent="">
+        <item name="android:textColor">@color/warning</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.warning.medium" parent="">
+        <item name="android:textColor">@color/warning</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.warning.large" parent="">
+        <item name="android:textColor">@color/warning</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.success.extraSmall" parent="">
+        <item name="android:textColor">@color/success</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.success.small" parent="">
+        <item name="android:textColor">@color/success</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.success.medium" parent="">
+        <item name="android:textColor">@color/success</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.success.large" parent="">
+        <item name="android:textColor">@color/success</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="wordpad.editText" parent="">
+        <item name="android:paddingLeft">@dimen/xxs</item>
+        <item name="android:paddingRight">@dimen/xxs</item>
+        <item name="android:paddingTop">@dimen/s</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/wordpad_edit_text</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColorHint">@color/divider</item>
+    </style>
+
+    <style name="wordpad.dropdown.base" parent="Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">@dimen/s</item>
+        <item name="android:paddingEnd">@dimen/s</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="wordpad.dropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">
+            @style/wordpad.dropdown.base
+        </item>
+    </style>
+
+    <style name="primaryButtonOverlay">
+        <item name="colorPrimary">@color/primary_dark</item>
+    </style>
+
+    <style name="greyButtonOverlay">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="wordpad.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:insetTop">@dimen/zero</item>
+        <item name="android:insetBottom">@dimen/zero</item>
+        <item name="cornerRadius">@dimen/corner_radius_s</item>
+        <item name="android:paddingTop">@dimen/xxs</item>
+        <item name="android:paddingBottom">@dimen/xxs</item>
+        <item name="minWidth">@dimen/zero</item>
+        <item name="minHeight">@dimen/zero</item>
+        <item name="android:minWidth">@dimen/zero</item>
+        <item name="android:minHeight">@dimen/zero</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="wordpad.Button.Primary" parent="wordpad.Button">
+        <item name="materialThemeOverlay">@style/primaryButtonOverlay</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="wordpad.Button.White" parent="wordpad.Button">
+        <item name="materialThemeOverlay">@style/greyButtonOverlay</item>
+        <item name="android:textColor">@color/divider</item>
+    </style>
+
+</resources>

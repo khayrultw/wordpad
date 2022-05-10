@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.khayrultw.wordpad.ui.presentations.wordDetails.viewModel.AddEditViewWordDetailsViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+        <include
+            android:id="@+id/appbar"
+            layout="@layout/item_layout_toolbar"
+            app:title="@{viewModel.title}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize"
+            android:padding="@dimen/s"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                style="@style/wordpad.text.regular.medium"
+                tools:text="Title"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/wordpad.editText"
+                android:hint="@string/enter_word"
+                android:text="@={viewModel.wordTitle}"
+                android:maxLines="1"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/meanings"
+                android:layout_marginTop="@dimen/xxm"
+                style="@style/wordpad.text.regular.medium"
+                tools:text="Meanings"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/wordpad.editText"
+                android:text="@={viewModel.wordMeanings}"
+                android:hint="@string/enter_word_meanings"
+                android:maxLines="3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/details"
+                android:layout_marginTop="@dimen/xxm"
+                style="@style/wordpad.text.regular.medium"
+                tools:text="Details"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/wordpad.editText"
+                android:text="@={viewModel.wordDescription}"
+                android:hint="@string/enter_details"
+                android:maxLines="10"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/xxm"
+                android:onClick="@{() -> viewModel.onSaveButtonClicked()}"
+                android:text="@string/save" />
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
