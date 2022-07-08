@@ -19,45 +19,26 @@
         android:background="@drawable/card_background"
         android:padding="@dimen/s"
         android:layout_marginBottom="@dimen/s"
-        android:onClick="@{onItemClicked::onClick}">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTextWord"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/word"
-            style="@style/wordpad.text.regular.medium"
-            tools:text="text1"/>
+        android:onClick="@{onItemClicked::onClick}"
+        android:foreground="?attr/selectableItemBackground">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvWordTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/tvTextWord"
             android:layout_marginStart="@dimen/xxxs"
             android:text="@{model.title}"
             style="@style/wordpad.text.regular.medium"
             tools:text="text1"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTextMeaning"
+            android:id="@+id/tvMeaning"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTextWord"
-            android:layout_marginTop="@dimen/m"
-            android:text="@string/meanings"
-            style="@style/wordpad.text.regular.medium"
-            tools:text="text1"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDefinition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/tvTextMeaning"
-            android:layout_below="@+id/tvTextWord"
+            android:layout_below="@+id/tvWordTitle"
             android:layout_marginStart="@dimen/xxxs"
-            android:layout_marginTop="@dimen/m"
-            android:text="@{model.definition}"
+            android:layout_marginTop="@dimen/xs"
+            android:text="@{model.meaning}"
             style="@style/wordpad.text.regular.medium"
             tools:text="text1"/>
     </RelativeLayout>

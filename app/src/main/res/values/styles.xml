@@ -144,6 +144,26 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="wordpad.text.regular.danger.extraSmall" parent="">
+        <item name="android:textColor">@color/danger</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.danger.small" parent="">
+        <item name="android:textColor">@color/danger</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.danger.medium" parent="">
+        <item name="android:textColor">@color/danger</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="wordpad.text.regular.danger.large" parent="">
+        <item name="android:textColor">@color/danger</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="wordpad.editText" parent="">
         <item name="android:paddingLeft">@dimen/xxs</item>
         <item name="android:paddingRight">@dimen/xxs</item>

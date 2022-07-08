@@ -11,48 +11,52 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_fragment_main_to_fragment_b"
+            android:id="@+id/action_navigation_main_to_view_word"
             app:enterAnim="@anim/slide_from_right"
             app:exitAnim="@anim/slide_to_left"
             app:popEnterAnim="@anim/slide_from_left"
             app:popExitAnim="@anim/slide_to_right"
-            app:destination="@id/wordDetails" />
+            app:destination="@id/viewWord" />
         <action
-            android:id="@+id/action_main_to_editWordDetails"
+            android:id="@+id/action_navigation_main_to_add_word"
             app:enterAnim="@anim/slide_from_right"
             app:exitAnim="@anim/slide_to_left"
             app:popEnterAnim="@anim/slide_from_left"
             app:popExitAnim="@anim/slide_to_right"
-            app:destination="@id/editWordDetails" />
-        <action
-            android:id="@+id/action_main_to_addWordDetails"
-            app:enterAnim="@anim/slide_from_right"
-            app:exitAnim="@anim/slide_to_left"
-            app:popEnterAnim="@anim/slide_from_left"
-            app:popExitAnim="@anim/slide_to_right"
-            app:destination="@id/addWordDetails" />
+            app:destination="@id/addWord" />
     </fragment>
     <fragment
-        android:id="@+id/wordDetails"
-        android:name="com.khayrultw.wordpad.ui.presentations.wordDetails.AddWordDetailsFragment"
+        android:id="@+id/viewWord"
+        android:name="com.khayrultw.wordpad.ui.presentations.word.view.ViewWordFragment"
         android:label="Word Details"
-        tools:layout="@layout/fragment_add_edit_word_details" >
+        tools:layout="@layout/fragment_view_word" >
+        <argument
+            android:name="extra_id"
+            app:argType="integer" />
         <action
-            android:id="@+id/action_wordDetails_to_editWordDetails"
+            android:id="@+id/action_navigation_view_word_to_edit_word"
             app:enterAnim="@anim/slide_from_right"
             app:exitAnim="@anim/slide_to_left"
             app:popEnterAnim="@anim/slide_from_left"
             app:popExitAnim="@anim/slide_to_right"
-            app:destination="@id/editWordDetails" />
+            app:destination="@id/editWord" />
     </fragment>
 
     <fragment
-        android:id="@+id/editWordDetails"
-        android:name="com.khayrultw.wordpad.ui.presentations.wordDetails.EditWordDetailsFragment"
-        android:label="EditWordDetailsFragment" />
+        android:id="@+id/editWord"
+        android:name="com.khayrultw.wordpad.ui.presentations.word.edit.EditWordFragment"
+        android:label="EditWordDetailsFragment"
+        tools:layout="@layout/fragment_add_edit_word">
+
+        <argument
+            android:name="extra_id"
+            app:argType="integer" />
+
+    </fragment>
 
     <fragment
-        android:id="@+id/addWordDetails"
-        android:name="com.khayrultw.wordpad.ui.presentations.wordDetails.AddWordDetailsFragment"
-        android:label="EditWordDetailsFragment" />
+        android:id="@+id/addWord"
+        android:name="com.khayrultw.wordpad.ui.presentations.word.add.AddWordFragment"
+        android:label="EditWordDetailsFragment"
+        tools:layout="@layout/fragment_add_edit_word"/>
 </navigation>

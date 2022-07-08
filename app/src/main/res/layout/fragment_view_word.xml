@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.khayrultw.wordpad.ui.presentations.word.view.viewModel.ViewWordViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+        <include
+            android:id="@+id/appbar"
+            layout="@layout/item_layout_toolbar"
+            app:title="@{viewModel.title}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize"
+            android:padding="@dimen/s"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnDone"
+                style="@style/wordpad.text.regular.success.large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/xxm"
+                android:text="@string/done"
+                android:onClick="@{() -> viewModel.onStatusChanged()}"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/wordpad.text.regular.primary.large"
+                android:layout_toEndOf="@id/btnDone"
+                android:paddingHorizontal="@dimen/xxm"
+                android:layout_marginStart="@dimen/xxm"
+                android:text="@string/edit"
+                android:onClick="@{() -> viewModel.onEditClicked()}"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/wordpad.text.regular.danger.large"
+                android:layout_toEndOf="@id/btnEdit"
+                android:paddingHorizontal="@dimen/xxm"
+                android:layout_marginStart="@dimen/xxm"
+                android:text="@string/delete"
+                android:onClick="@{() -> viewModel.onDeleteClicked()}"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnDone"
+                android:layout_marginTop="@dimen/xxm"
+                style="@style/wordpad.text.regular.medium"
+                android:text="@={viewModel.wordTitle}"
+                tools:text="@string/title"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/meaning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/wordpad.text.regular.medium"
+                android:layout_marginTop="@dimen/xxm"
+                android:layout_below="@+id/title"
+                android:text="@={viewModel.wordMeaning}"
+                tools:text="@string/meaning"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xxm"
+                style="@style/wordpad.text.regular.medium"
+                android:layout_below="@id/meaning"
+                android:text="@={viewModel.wordDetails}"
+                tools:text="@string/word_details"/>
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

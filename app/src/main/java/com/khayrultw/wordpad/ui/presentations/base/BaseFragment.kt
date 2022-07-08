@@ -1,6 +1,7 @@
 package com.khayrultw.wordpad.ui.presentations.base
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -64,4 +65,11 @@ abstract class BaseFragment<T: ViewDataBinding>: Fragment() {
     }
 
     protected open fun onBindData(view: View) {}
+
+    protected fun navigateBack() {
+        val successful = navController.popBackStack()
+        if (!successful) {
+            requireActivity().finish()
+        }
+    }
 }

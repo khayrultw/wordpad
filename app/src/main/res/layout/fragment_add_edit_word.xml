@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.khayrultw.wordpad.ui.presentations.wordDetails.viewModel.AddEditViewWordDetailsViewModel" />
+            type="com.khayrultw.wordpad.ui.presentations.word.base.viewModel.AddEditViewWordViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -45,17 +45,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/meanings"
+                android:text="@string/meaning"
                 android:layout_marginTop="@dimen/xxm"
                 style="@style/wordpad.text.regular.medium"
-                tools:text="Meanings"/>
+                tools:text="meaning"/>
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/wordpad.editText"
-                android:text="@={viewModel.wordMeanings}"
-                android:hint="@string/enter_word_meanings"
+                android:text="@={viewModel.wordMeaning}"
+                android:hint="@string/enter_word_meaning"
                 android:maxLines="3"/>
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/wordpad.editText"
-                android:text="@={viewModel.wordDescription}"
+                android:text="@={viewModel.wordDetails}"
                 android:hint="@string/enter_details"
                 android:maxLines="10"/>
 

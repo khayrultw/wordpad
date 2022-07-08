@@ -14,7 +14,7 @@ class WordRepositoryImpl(
         return dao.getWordById(id)
     }
 
-    override suspend fun insertWord(word: Word) {
+    override suspend fun insertWord(word: Word){
         dao.insertWord(word)
     }
 

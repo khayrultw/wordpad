@@ -9,7 +9,7 @@ import com.khayrultw.wordpad.R
 import com.khayrultw.wordpad.data.apis.model.Word
 import com.khayrultw.wordpad.databinding.ItemLayoutWordBinding
 
-class WordsAdapter(private val items: List<Word>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class WordsAdapter(private var items: List<Word>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var listener: Listener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -33,16 +33,21 @@ class WordsAdapter(private val items: List<Word>): RecyclerView.Adapter<Recycler
         return items.size
     }
 
+    fun setModels(models: List<Word>) {
+        this.items = models
+        notifyDataSetChanged()
+    }
+
     inner class WordItemHolder(private val binding: ItemLayoutWordBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(model: Word) {
             binding.model = model
             binding.onItemClicked = View.OnClickListener {
-                listener?.onItemClicked()
+                listener?.onItemClicked(model.id ?: -1)
             }
         }
     }
 
     interface Listener {
-        fun onItemClicked()
+        fun onItemClicked(id: Int)
     }
 }

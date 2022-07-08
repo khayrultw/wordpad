@@ -9,7 +9,8 @@ data class Word(
     @PrimaryKey
     val id: Int? = null,
     val title: String,
-    val definition: String,
+    val meaning: String,
+    val details: String,
     val status: String,
     val date: Long
 )

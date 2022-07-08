@@ -6,9 +6,12 @@
         <entry key="app/src/main/res/drawable/card_background.xml" value="0.296" />
         <entry key="app/src/main/res/drawable/wordpad_edit_text.xml" value="0.296" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/res/layout/fragment_add_edit_word.xml" value="0.297554347826087" />
         <entry key="app/src/main/res/layout/fragment_add_edit_word_details.xml" value="0.297554347826087" />
         <entry key="app/src/main/res/layout/fragment_b.xml" value="0.29322916666666665" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.29322916666666665" />
+        <entry key="app/src/main/res/layout/fragment_view_word.xml" value="0.297554347826087" />
+        <entry key="app/src/main/res/layout/fragment_view_word_details.xml" value="0.297554347826087" />
         <entry key="app/src/main/res/layout/fragment_word_details.xml" value="0.297554347826087" />
         <entry key="app/src/main/res/layout/item_layout_toolbar.xml" value="0.297554347826087" />
         <entry key="app/src/main/res/layout/item_layout_word.xml" value="0.297554347826087" />
