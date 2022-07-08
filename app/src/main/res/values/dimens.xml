@@ -38,4 +38,7 @@
     <dimen name="corner_radius_s">12dp</dimen>
     <dimen name="corner_radius_m">16dp</dimen>
     <dimen name="corner_radius_xm">20dp</dimen>
+
+    <dimen name="small_image_width">64dp</dimen>
+    <dimen name="small_image_height">64dp</dimen>
 </resources>

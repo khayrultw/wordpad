@@ -23,6 +23,9 @@ class MainViewModelImpl @Inject constructor(private val wordRepository: WordRepo
     private val _navigateToWordDetails: MutableSharedFlow<Int> = MutableSharedFlow()
     override val navigateToWordDetails: SharedFlow<Int> = _navigateToWordDetails
 
+    private val _emptyScreen = MutableLiveData<Boolean>().apply { value = true }
+    override val emptyScreen: LiveData<Boolean> = _emptyScreen
+
     override fun onCreateView() {
         super.onCreateView()
         getWords()
@@ -32,6 +35,7 @@ class MainViewModelImpl @Inject constructor(private val wordRepository: WordRepo
         viewModelScope.launch {
             val res = wordRepository.getWords()
             _words.value = res
+            _emptyScreen.value = res.isEmpty()
         }
     }
 

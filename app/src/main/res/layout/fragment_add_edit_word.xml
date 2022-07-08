@@ -12,12 +12,17 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color">
+        android:background="@color/white">
 
         <include
             android:id="@+id/appbar"
             layout="@layout/item_layout_toolbar"
             app:title="@{viewModel.title}" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:dividerColor="@color/divider" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,6 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/wordpad.editText"
+                android:layout_marginTop="@dimen/xxs"
                 android:hint="@string/enter_word"
                 android:text="@={viewModel.wordTitle}"
                 android:maxLines="1"/>
@@ -53,9 +59,27 @@
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xxs"
                 style="@style/wordpad.editText"
                 android:text="@={viewModel.wordMeaning}"
                 android:hint="@string/enter_word_meaning"
+                android:maxLines="3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/synonym"
+                android:layout_marginTop="@dimen/xxm"
+                style="@style/wordpad.text.regular.medium"
+                tools:text="Synonym"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xxs"
+                style="@style/wordpad.editText"
+                android:text="@={viewModel.wordSynonym}"
+                android:hint="@string/enter_details"
                 android:maxLines="3"/>
 
             <TextView
@@ -69,18 +93,26 @@
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xxs"
                 style="@style/wordpad.editText"
                 android:text="@={viewModel.wordDetails}"
                 android:hint="@string/enter_details"
                 android:maxLines="10"/>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
             <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
                 android:layout_marginTop="@dimen/xxm"
                 android:onClick="@{() -> viewModel.onSaveButtonClicked()}"
-                android:text="@string/save" />
+                android:text="@string/save"
+                app:cornerRadius="@dimen/xs"
+                android:paddingVertical="@dimen/s"
+                android:layout_marginBottom="@dimen/xm"/>
 
         </LinearLayout>
 

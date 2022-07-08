@@ -33,12 +33,13 @@ class EditWordViewModelImpl @Inject constructor(private val wordRepository: Word
     override fun onSaveButtonClicked() {
         viewModelScope.launch {
             val word = Word(
-                id,
-                wordTitle.value ?: "",
-                wordMeaning.value ?: "",
-                wordDetails.value ?: "",
-                "new",
-                0L
+                id = id,
+                title = wordTitle.value ?: "",
+                meaning = wordMeaning.value ?: "",
+                synonym = wordSynonym.value ?: "",
+                details = wordDetails.value ?: "",
+                status = "new",
+                date = 0L
             )
             wordRepository.insertWord(word)
             _finish.emit(Unit)

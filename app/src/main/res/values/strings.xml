@@ -4,8 +4,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="word">Word:</string>
     <string name="title">Title</string>
-    <string name="meaning">Meaning:</string>
-    <string name="details">Details:</string>
+    <string name="meaning">Meaning</string>
+    <string name="details">Details</string>
     <string name="save">Save</string>
     <string name="word_details">Word Details</string>
     <string name="enter_word">Enter word</string>
@@ -14,4 +14,7 @@
     <string name="done">Done</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="synonym">Synonym</string>
+    <string name="search">Search</string>
+    <string name="no_word_found">No word found</string>
 </resources>

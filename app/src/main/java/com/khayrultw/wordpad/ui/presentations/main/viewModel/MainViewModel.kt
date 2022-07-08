@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.SharedFlow
 
 interface MainViewModel: ViewModel {
     val words: LiveData<List<Word>>
+    val emptyScreen: LiveData<Boolean>
     val navigateToAddWord: SharedFlow<Unit>
     val navigateToWordDetails: SharedFlow<Int>
 

@@ -10,6 +10,7 @@ data class Word(
     val id: Int? = null,
     val title: String,
     val meaning: String,
+    val synonym: String,
     val details: String,
     val status: String,
     val date: Long

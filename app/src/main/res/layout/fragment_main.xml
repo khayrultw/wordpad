@@ -7,6 +7,7 @@
         <variable
             name="viewModel"
             type="com.khayrultw.wordpad.ui.presentations.main.viewModel.MainViewModel" />
+        <import type="android.view.View" />
     </data>
 
 
@@ -15,40 +16,111 @@
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
-        <include
-            android:id="@+id/appbar"
-            app:title='@{viewModel.title}'
-            layout="@layout/item_layout_toolbar" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="?actionBarSize">
+            android:orientation="vertical">
 
-            <FrameLayout
+            <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvWords"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:padding="@dimen/m"
-                android:paddingBottom="@dimen/xxm" />
-
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_marginEnd="@dimen/xxm"
-                android:layout_marginBottom="@dimen/xxm"
-                app:icon="@drawable/ic_add"
-                app:iconTint="@color/white"
-                android:onClick="@{() -> viewModel.onAddButtonClicked()}"/>
+                android:background="@color/white"
+                android:orientation="vertical">
 
-            </FrameLayout>
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:titleTextAppearance="@style/wordpad.text.regular.primary.large"
+                    app:title="@string/app_name"
+                    app:titleCentered="true"
+                    android:elevation="0dp"
+                    app:titleTextColor="@color/black" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/xxs"
+                    android:layout_marginBottom="@dimen/xxs"
+                    app:startIconDrawable="@drawable/ic_search"
+                    app:endIconDrawable="@drawable/ic_clear"
+                    app:endIconTint="@color/divider"
+                    android:switchTextAppearance="@style/wordpad.text.regular.medium"
+                    app:endIconMode="clear_text"
+                    app:hintEnabled="false"
+                    android:padding="0dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionSearch"
+                        android:padding="@dimen/xxs"
+                        android:singleLine="true"
+                        android:drawablePadding="-12dp"
+                        style="@style/wordpad.text.regular.medium"
+                        android:hint="@string/search"
+                        android:background="@drawable/rounded_edittext" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/srlMovies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:id="@+id/ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="@{viewModel.emptyScreen ? View.VISIBLE : View.GONE}"
+                        android:layout_marginBottom="@dimen/xxxxxl">
+
+                        <ImageView
+                            android:layout_width="@dimen/small_image_width"
+                            android:layout_height="@dimen/small_image_height"
+                            android:src="@drawable/ic_word"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_word_found"
+                            style="@style/wordpad.text.regular.large"/>
+
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvWords"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:padding="@dimen/m"
+                        android:paddingBottom="@dimen/xxm"
+                        android:visibility="@{viewModel.emptyScreen ? View.GONE : View.VISIBLE}" />
+                </FrameLayout>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
         </LinearLayout>
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/xxm"
+            android:layout_marginBottom="@dimen/xxm"
+            app:icon="@drawable/ic_add"
+            app:iconTint="@color/white"
+            android:onClick="@{() -> viewModel.onAddButtonClicked()}"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

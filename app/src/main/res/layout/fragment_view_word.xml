@@ -12,12 +12,17 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_color">
+        android:background="@color/white">
 
         <include
             android:id="@+id/appbar"
             layout="@layout/item_layout_toolbar"
             app:title="@{viewModel.title}" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:dividerColor="@color/divider" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -26,67 +31,118 @@
             android:padding="@dimen/s"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDone"
-                style="@style/wordpad.text.regular.success.large"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/xxm"
-                android:text="@string/done"
-                android:onClick="@{() -> viewModel.onStatusChanged()}"/>
+                app:cornerRadius="@dimen/xs"
+                android:onClick="@{() -> viewModel.onEditClicked()}"
+                android:insetTop="1dp"
+                android:insetBottom="1dp"
+                android:minHeight="0dp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:text="@string/done" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/wordpad.text.regular.primary.large"
-                android:layout_toEndOf="@id/btnDone"
-                android:paddingHorizontal="@dimen/xxm"
                 android:layout_marginStart="@dimen/xxm"
+                android:layout_toEndOf="@id/btnDone"
+                android:insetTop="1dp"
+                android:insetBottom="1dp"
+                android:minHeight="0dp"
                 android:text="@string/edit"
-                android:onClick="@{() -> viewModel.onEditClicked()}"/>
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/xs" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/wordpad.text.regular.danger.large"
-                android:layout_toEndOf="@id/btnEdit"
-                android:paddingHorizontal="@dimen/xxm"
                 android:layout_marginStart="@dimen/xxm"
+                android:layout_toEndOf="@id/btnEdit"
+                android:insetTop="1dp"
+                android:insetBottom="1dp"
+                android:minHeight="0dp"
+                android:onClick="@{() -> viewModel.onDeleteClicked()}"
                 android:text="@string/delete"
-                android:onClick="@{() -> viewModel.onDeleteClicked()}"/>
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:backgroundTint="@color/danger"
+                app:cornerRadius="@dimen/xs" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <LinearLayout
                 android:layout_below="@id/btnDone"
-                android:layout_marginTop="@dimen/xxm"
-                style="@style/wordpad.text.regular.medium"
-                android:text="@={viewModel.wordTitle}"
-                tools:text="@string/title"/>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/meaning"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/wordpad.text.regular.medium"
-                android:layout_marginTop="@dimen/xxm"
-                android:layout_below="@+id/title"
-                android:text="@={viewModel.wordMeaning}"
-                tools:text="@string/meaning"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/xxm"
-                style="@style/wordpad.text.regular.medium"
-                android:layout_below="@id/meaning"
-                android:text="@={viewModel.wordDetails}"
-                tools:text="@string/word_details"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/wordpad.text.regular.medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/xxm"
+                    android:text="@string/title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    style="@style/wordpad.text.regular.medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.wordTitle}"
+                    tools:text="@string/title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/wordpad.text.regular.medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/xxm"
+                    android:textStyle=""
+                    android:text="@string/meaning" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/meaning"
+                    style="@style/wordpad.text.regular.medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={viewModel.wordMeaning}"
+                    android:textStyle=""
+                    tools:text="@string/meaning" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/xxm"
+                    style="@style/wordpad.text.regular.medium"
+                    android:text="@string/synonym"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/synonym"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/wordpad.text.regular.medium"
+                    android:text="@={viewModel.wordDetails}"
+                    tools:text="@string/synonym"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/xxm"
+                    style="@style/wordpad.text.regular.medium"
+                    android:text="@string/word_details"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/wordpad.text.regular.medium"
+                    android:text="@={viewModel.wordDetails}"
+                    tools:text="@string/word_details"/>
+            </LinearLayout>
         </RelativeLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

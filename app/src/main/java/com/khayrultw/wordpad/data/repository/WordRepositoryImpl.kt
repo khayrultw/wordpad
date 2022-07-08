@@ -18,7 +18,7 @@ class WordRepositoryImpl(
         dao.insertWord(word)
     }
 
-    override suspend fun deleteWord(word: Word) {
-        dao.deleteWord(word)
+    override suspend fun deleteWord(id: Int) {
+        dao.deleteWord(id)
     }
 }

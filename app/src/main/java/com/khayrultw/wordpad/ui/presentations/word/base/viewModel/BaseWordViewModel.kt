@@ -4,7 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import com.khayrultw.wordpad.ui.presentations.base.viewModel.BaseViewModel
 
 abstract class BaseWordViewModel(): BaseViewModel(), WordViewModel {
-    override val wordTitle: MutableLiveData<String> = MutableLiveData()
-    override val wordMeaning: MutableLiveData<String> = MutableLiveData()
-    override val wordDetails: MutableLiveData<String> = MutableLiveData()
+    override val wordTitle: MutableLiveData<String> = MutableLiveData("")
+    override val wordMeaning: MutableLiveData<String> = MutableLiveData("")
+    override val wordSynonym: MutableLiveData<String> = MutableLiveData("")
+    override val wordDetails: MutableLiveData<String> = MutableLiveData("")
 }

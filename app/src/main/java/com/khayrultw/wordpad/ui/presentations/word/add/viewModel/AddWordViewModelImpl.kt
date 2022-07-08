@@ -16,12 +16,12 @@ class AddWordViewModelImpl @Inject constructor(private val wordRepository: WordR
     override fun onSaveButtonClicked() {
         viewModelScope.launch {
             val word = Word(
-                null,
-                wordTitle.value ?: "",
-                wordMeaning.value ?: "",
-                wordDetails.value ?: "",
-                "new",
-                0L
+                title = wordTitle.value ?: "",
+                meaning = wordMeaning.value ?: "",
+                details = wordDetails.value ?: "",
+                synonym = wordSynonym.value ?: "",
+                status = "new",
+                date = 0L
             )
             wordRepository.insertWord(word)
             _finish.emit(Unit)

@@ -50,7 +50,9 @@ class ViewWordViewModelImpl @Inject constructor(
     }
 
     override fun onDeleteClicked() {
-
+        viewModelScope.launch {
+            wordRepository.deleteWord(id)
+        }
     }
 
     override fun onRefresh() {
