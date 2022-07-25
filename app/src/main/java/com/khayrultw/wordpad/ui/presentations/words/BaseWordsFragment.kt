@@ -13,6 +13,8 @@ import com.khayrultw.wordpad.ui.adapter.WordsAdapter
 import com.khayrultw.wordpad.ui.constants.ExtraCodes
 import com.khayrultw.wordpad.ui.constants.RequestCodes
 import com.khayrultw.wordpad.ui.presentations.base.BaseFragment
+import com.khayrultw.wordpad.ui.presentations.home.HomeFragment
+import com.khayrultw.wordpad.ui.presentations.home.HomeFragmentDirections
 import com.khayrultw.wordpad.ui.presentations.words.viewModel.NewWordsViewModelImpl
 import com.khayrultw.wordpad.ui.presentations.words.viewModel.WordsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,6 +38,16 @@ abstract class BaseWordsFragment : BaseFragment<FragmentWordsBinding>() {
 
         viewModel.words.observe(viewLifecycleOwner) {
             adapter.setModels(it)
+        }
+
+        viewModel.navigateToAddWord.asLiveData().observe(viewLifecycleOwner) {
+            val action = HomeFragmentDirections.actionNavigationHomeToAddWord()
+            navController.navigate(action)
+        }
+
+        viewModel.navigateToWordDetails.asLiveData().observe(viewLifecycleOwner) {
+            val action = HomeFragmentDirections.actionNavigationHomeToViewWord(it)
+            navController.navigate(action)
         }
     }
 

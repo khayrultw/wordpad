@@ -7,4 +7,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class OldWordsFragment : BaseWordsFragment() {
     override val viewModel: OldWordsViewModelImpl by viewModels()
+
+    companion object {
+        val instance = OldWordsFragment()
+    }
 }
