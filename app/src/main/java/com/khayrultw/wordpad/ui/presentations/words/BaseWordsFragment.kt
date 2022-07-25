@@ -1,4 +1,4 @@
-package com.khayrultw.wordpad.ui.presentations.main
+package com.khayrultw.wordpad.ui.presentations.words
 
 import android.os.Bundle
 import android.view.View
@@ -8,21 +8,20 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.khayrultw.wordpad.R
-import com.khayrultw.wordpad.data.apis.model.Word
-import com.khayrultw.wordpad.databinding.FragmentMainBinding
+import com.khayrultw.wordpad.databinding.FragmentWordsBinding
 import com.khayrultw.wordpad.ui.adapter.WordsAdapter
 import com.khayrultw.wordpad.ui.constants.ExtraCodes
 import com.khayrultw.wordpad.ui.constants.RequestCodes
 import com.khayrultw.wordpad.ui.presentations.base.BaseFragment
-import com.khayrultw.wordpad.ui.presentations.main.viewModel.MainViewModelImpl
+import com.khayrultw.wordpad.ui.presentations.words.viewModel.NewWordsViewModelImpl
+import com.khayrultw.wordpad.ui.presentations.words.viewModel.WordsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
-class MainFragment : BaseFragment<FragmentMainBinding>() {
-    override val viewModel by viewModels<MainViewModelImpl>()
+abstract class BaseWordsFragment : BaseFragment<FragmentWordsBinding>() {
+    abstract override val viewModel: WordsViewModel
     private lateinit var adapter: WordsAdapter
 
-    override fun getLayoutResource(): Int = R.layout.fragment_main
+    override fun getLayoutResource(): Int = R.layout.fragment_words
 
     override fun getToolbar(): Toolbar? = null
 
@@ -37,16 +36,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
 
         viewModel.words.observe(viewLifecycleOwner) {
             adapter.setModels(it)
-        }
-
-        viewModel.navigateToAddWord.asLiveData().observe(viewLifecycleOwner) {
-            val action = MainFragmentDirections.actionNavigationMainToAddWord()
-            navController.navigate(action)
-        }
-
-        viewModel.navigateToWordDetails.asLiveData().observe(viewLifecycleOwner) {
-            val action = MainFragmentDirections.actionNavigationMainToViewWord(it)
-            navController.navigate(action)
         }
     }
 

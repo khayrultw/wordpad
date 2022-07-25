@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/main_fragment"
-        android:name="com.khayrultw.wordpad.ui.presentations.main.MainFragment"
+        android:name="com.khayrultw.wordpad.ui.presentations.words.NewWordsFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_words" >
         <action
             android:id="@+id/action_navigation_main_to_view_word"
             app:enterAnim="@anim/slide_from_right"

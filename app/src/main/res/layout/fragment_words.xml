@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.khayrultw.wordpad.ui.presentations.main.viewModel.MainViewModel" />
+            type="com.khayrultw.wordpad.ui.presentations.words.viewModel.WordsViewModel" />
         <import type="android.view.View" />
     </data>
 
@@ -107,7 +107,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:clipToPadding="false"
-                        android:padding="@dimen/m"
+                        android:padding="@dimen/s"
                         android:paddingBottom="@dimen/xxm"
                         android:visibility="@{viewModel.emptyScreen ? View.GONE : View.VISIBLE}" />
                 </FrameLayout>
