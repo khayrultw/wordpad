@@ -2,6 +2,7 @@ package com.khayrultw.wordpad.ui.presentations.home
 
 import android.view.View
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import com.google.android.material.tabs.TabLayoutMediator
 import com.khayrultw.wordpad.MainActivity
@@ -9,6 +10,7 @@ import com.khayrultw.wordpad.R
 import com.khayrultw.wordpad.databinding.FragmentHomeBinding
 import com.khayrultw.wordpad.ui.adapter.ViewPagerAdapter
 import com.khayrultw.wordpad.ui.presentations.base.BaseFragment
+import com.khayrultw.wordpad.ui.presentations.home.viewModel.HomeViewModel
 import com.khayrultw.wordpad.ui.presentations.words.NewWordsFragment
 import com.khayrultw.wordpad.ui.presentations.words.OldWordsFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,12 +33,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 when(position) {
                     0 -> {
                         tab.text = "New Words"
+
                     }
                     1 -> {
                         tab.text = "Old Word"
                     }
                 }
-            }
+            }.attach()
         }
     }
 }

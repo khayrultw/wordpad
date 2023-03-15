@@ -221,4 +221,13 @@
         <item name="android:textColor">@color/divider</item>
     </style>
 
+    <style name="RoundedTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@drawable/tabs_selector</item>
+        <item name="tabIndicator">@null</item>
+        <item name="android:background">@drawable/tab_layout_bg</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+        <item name="tabTextColor">@color/primary</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
 </resources>
